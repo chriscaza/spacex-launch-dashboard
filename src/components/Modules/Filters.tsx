@@ -1,5 +1,6 @@
 import Select from "../Ui/Select";
 import Input from "../Ui/Input";
+import ClearButton from "../Ui/CleanButton";
 import { type launchesData, type filters } from "../../types";
 
 type Props = {
@@ -13,6 +14,15 @@ function Filters({ rockets, launches, filters, setFilters}: Props) {
     const handleChange = (field: keyof filters, value: string) => {
         setFilters((prev) => ({ ...prev, [field]: value }));
     };
+
+    const handleClear = () => {
+        setFilters({
+            rocketId: "",
+            result: "",
+            year: "",
+            mission: "",
+        });
+    }
 
     const rocketOptions = [
         { label: "Cohetes", value: "" },
@@ -41,7 +51,15 @@ function Filters({ rockets, launches, filters, setFilters}: Props) {
     ];
 
     return (
-        <div>
+        <div className="relative w-full border rounded-2xl border-white p-6">
+            
+            <ClearButton onClear={handleClear} />
+
+            <Input
+                value={filters.mission}
+                onChange={(e) => handleChange("mission", e)}
+            />
+
             <Select
                 label="Cohete"
                 options={rocketOptions}
@@ -61,11 +79,6 @@ function Filters({ rockets, launches, filters, setFilters}: Props) {
                 options={yearOptions}
                 value={filters.year}
                 onChange={(v) => handleChange("year", v)}
-            />
-
-            <Input
-                value={filters.mission}
-                onChange={(e) => handleChange("mission", e)}
             />
 
         </div>
