@@ -25,10 +25,10 @@ function LaunchCard({ launch, rocketName, launchSite }: Props) {
       </div>
 
       <div>
-        <p className="text-base font-[var(--font-roboto)] font-bold mb-1 w-35 truncate">{launch.name}</p>
-        <p className="text-base font-[var(--font-roboto)] mb-1 w-35 truncate">{launchSite}</p>
-        <p className="text-base font-[var(--font-roboto)] mb-1">{rocketName}</p>
-        <p className="text-base font-[var(--font-roboto)] mb-1">{new Date(launch.date_local).toLocaleDateString()}</p>
+        <p className="text-base font-[var(--font-roboto)] font-bold lg:mb-1 w-25 truncate">{launch.name}</p>
+        <p className="text-base font-[var(--font-roboto)] lg:mb-1 w-25 truncate">{launchSite}</p>
+        <p className="text-base font-[var(--font-roboto)] lg:mb-1">{rocketName}</p>
+        <p className="text-base font-[var(--font-roboto)] lg:mb-1">{new Date(launch.date_local).toLocaleDateString()}</p>
       </div>
 
     </div>

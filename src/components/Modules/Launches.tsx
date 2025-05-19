@@ -9,7 +9,7 @@ type Props = {
 
 function Launches({ launches, rockets, launchpads }: Props) {
   return (
-    <div className="w-1/2 overflow-y-auto scrollbar-hide grid gap-4">
+    <div className="lg:w-1/2 overflow-y-auto scrollbar-hide grid gap-4">
       {launches.map((launch) => {
         const rocketName = rockets[launch.rocket] || "Desconocido";
         const launchpad = launchpads[launch.launchpad];

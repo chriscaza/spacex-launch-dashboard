@@ -67,16 +67,16 @@ function App() {
   });
 
   return (
-    <div className="px-11 py-11 w-screen h-dvh bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${earth})` }}>
+    <div className="px-11 py-5 lg:py-11 w-screen h-dvh bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${earth})` }}>
       <div className="backdrop-blur-md bg-white/5 rounded-3xl border border-white h-full w-full flex flex-col">
 
         <div>
           <Menu/>
         </div>
 
-        <div className="flex gap-7 p-9 flex-grow h-60">
+        <div className="flex gap-11 lg:gap-7 px-11 py-7 lg:p-9 flex-grow h-60">
 
-          <div  className="flex w-2/5 pr-7 gap-7 border-r border-white">
+          <div  className="flex flex-col lg:flex-row w-2/5 lg:w-2/4 pr-11 lg:pr-7 gap-5 lg:gap-7 border-r border-white">
             {error && <p className="text-red-600">Error: {error}</p>}
             <Filters
               rockets={rockets}
@@ -91,7 +91,7 @@ function App() {
             />
           </div>
 
-          <div className="w-3/5">
+          <div className="w-3/5 lg:w-2/4">
             <Maps/>
           </div>
 
