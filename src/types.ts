@@ -18,3 +18,10 @@ export type rocketData = {
   id: string;
   name: string;
 }
+
+export type filters = {
+    rocketId: string;
+    result: string;
+    year: string;
+    mission: string;
+}
