@@ -22,7 +22,7 @@ function Favorites() {
       {favorites.length === 0 ? (
         <p>No tienes lanzamientos guardados.</p>
       ) : (
-        <div className="flex flex-col gap-4 h-96 lg:h-90 overflow-y-auto">
+        <div className="flex flex-col gap-4 h-96 lg:h-90 overflow-y-auto scrollbar-hide">
           {favorites.map((fav) => (
             <FavoriteCard key={fav.id} {...fav} onRemove={removeFavorite} />
           ))}
