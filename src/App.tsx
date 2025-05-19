@@ -5,6 +5,7 @@ import { fetchLaunchpads } from "./services/LaunchpadsServices";
 import { type filters, type launchesData, type locationData } from "./types";
 import Filters from "./components/Modules/Filters";
 import Launches from "./components/Modules/Launches";
+import Menu from "./components/Modules/Menu";
 
 function App() {
   const [launches, setLaunches] = useState<launchesData[]>([]);
@@ -64,23 +65,25 @@ function App() {
   });
 
   return (
-    <>
-      <h1 className="text-5xl text-cyan-700 mb-4">Lanzamientos SpaceX</h1>
+    <div className="bg-black">
+      <Menu/>
       <div>
-        {error && <p className="text-red-600">Error: {error}</p>}
-        <Filters
-          rockets={rockets}
-          launches={launches}
-          filters={filters}
-          setFilters={setFilters}
-        />
-        <Launches
-          rockets={rockets}
-          launches={filteredLaunches}
-          launchpads={launchpads}
-        />
+        <div>
+          {error && <p className="text-red-600">Error: {error}</p>}
+          <Filters
+            rockets={rockets}
+            launches={launches}
+            filters={filters}
+            setFilters={setFilters}
+          />
+          <Launches
+            rockets={rockets}
+            launches={filteredLaunches}
+            launchpads={launchpads}
+          />
+        </div>
       </div>
-    </>
+    </div>
   );
 }
 
