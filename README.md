@@ -1,54 +1,86 @@
-# React + TypeScript + Vite
+# 🚀 SpaceX Launch Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**SpaceX Launch Dashboard** es una aplicación frontend construida con **React + TypeScript + Vite + TailwindCSS**, que consume la API pública de SpaceX para visualizar lanzamientos espaciales. Incluye funcionalidades como filtros por año, estado del lanzamiento, búsqueda por nombre, favoritos almacenados en `localStorage` y visualización de ubicaciones en un mapa de Google Maps.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠️ Tecnologías utilizadas
 
-## Expanding the ESLint configuration
+- React 19 + React Router 7
+- TypeScript
+- Vite
+- TailwindCSS
+- Google Maps API
+- Icons de `react-icons`
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## ⚙️ Instrucciones para la instalación
+
+Sigue estos pasos para clonar, instalar y correr el proyecto localmente:
+
+### 1. Clonar el repositorio
+
+```bash
+git clone https://github.com/chriscaza/spacex-launch-dashboard.git
+cd spacex-launch-dashboard
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Instalar las dependencias
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Asegúrate de tener Node.js v18+ instalado. Luego ejecuta:
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+npm install
 ```
+
+### 3. Clave de google maps
+
+
+1. Esta está ubicada en el archivo .env
+
+```env
+VITE_GOOGLE_MAPS_API_KEY=AIzaSyAxj3v8QBOCv68HShK7-i65KcH72XcY3B4
+```
+
+### 4. Correr el proyecto en desarrollo
+
+```bash
+npm run dev
+```
+
+## 🧭 Instrucciones de uso
+
+Una vez que abras la app en el navegador `http://localhost:5173`, podrás:
+
+### 🔎 Explorar lanzamientos
+
+- Ver tarjetas con información de cada lanzamiento (nombre, fecha, estado).
+- Usar la **barra de búsqueda** para encontrar lanzamientos por nombre de misión.
+
+### 📅 Filtros
+
+- Filtrar por año de lanzamiento.
+- Filtrar por estado: exitoso, fallido o todos.
+- Filtar por cohete.
+- Limpiar filtros con un botón dedicado.
+
+### ⭐ Favoritos
+
+- Marca cualquier lanzamiento como favorito con un icono de corazón.
+- Tus favoritos se guardan automáticamente en `localStorage`.
+- Puedes ver los favoritos presionando el iciono de corazon que está en el menú.
+
+## 📂 Scripts útiles
+
+- `npm run dev`: Inicia el servidor de desarrollo
+- `npm run build`: Compila el proyecto para producción
+- `npm run lint`: Corre ESLint para verificar el código
+
+---
+
+## 🧑‍💻 Autor
+
+Desarrollado por **Christian Iván Cazarin de Anda**  
+Frontend Developer | Tecnólogo en Electrónica | Ingeniero en Software  
+[LinkedIn](https://www.linkedin.com/in/chris-cazarin-b26ab32b5) • [GitHub](https://github.com/chriscaza)
