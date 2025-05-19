@@ -25,3 +25,12 @@ export type filters = {
     year: string;
     mission: string;
 }
+
+export type FavoriteData = {
+  id: string;
+  name: string;
+  rocketName: string;
+  launchSite: string;
+  date_local: string;
+  success: boolean;
+};

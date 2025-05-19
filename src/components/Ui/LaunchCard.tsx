@@ -54,7 +54,7 @@ function LaunchCard({ launch, rocketName, launchSite }: Props) {
           {isFavorite ? (
             <MdFavoriteBorder className="text-red-500 text-3xl" />
           ) : (
-            <MdFavoriteBorder className="text-white text-3xl" />
+            <MdFavoriteBorder className="text-white text-3xl opacity-50" />
           )}
         </button>
       </div>
