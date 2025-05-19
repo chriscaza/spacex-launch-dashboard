@@ -51,7 +51,7 @@ function Filters({ rockets, launches, filters, setFilters}: Props) {
     ];
 
     return (
-        <div className="relative w-full border rounded-2xl border-white p-6">
+        <div className="relative w-1/2 border rounded-2xl border-white p-6">
             
             <ClearButton onClear={handleClear} />
 
