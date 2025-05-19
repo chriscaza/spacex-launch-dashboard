@@ -6,7 +6,9 @@ function Favorites() {
   const [favorites, setFavorites] = useState<FavoriteData[]>([]);
 
   useEffect(() => {
-    const storedFavorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+    const storedFavorites = JSON.parse(
+      localStorage.getItem("favorites") || "[]"
+    );
     setFavorites(storedFavorites);
   }, []);
 
@@ -18,7 +20,9 @@ function Favorites() {
 
   return (
     <div className="p-6 text-white">
-      <h1 className="font-[var(--font-roboto)] text-2xl font-normal mb-4">Mis Lanzamientos Favoritos</h1>
+      <h1 className="font-[var(--font-roboto)] text-2xl font-normal mb-4">
+        Mis Lanzamientos Favoritos
+      </h1>
       {favorites.length === 0 ? (
         <p>No tienes lanzamientos guardados.</p>
       ) : (
@@ -33,4 +37,3 @@ function Favorites() {
 }
 
 export default Favorites;
-
