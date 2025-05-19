@@ -12,7 +12,7 @@ function Input({value, onChange}: Props) {
                 value={value}
                 onChange={(e) => onChange(e.target.value)}
                 placeholder="Misión"
-                className="font-[var(--font-roboto)] text-base text-white border rounded-lg bg-white/20 pl-3 py-1 lg:py-2 w-full mb-4"
+                className="font-[var(--font-roboto)] text-base text-black border border-color border rounded-lg bg-white/80 pl-3 py-1 lg:py-2 w-full mb-4"
             />
         </div>
     )

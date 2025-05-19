@@ -17,7 +17,7 @@ function Select({ label, options, value, onChange }: Props) {
         {label}
       </label>
       <select
-        className="appearance-none font-[var(--font-roboto)] text-base text-white border rounded-lg bg-white/20 pl-3 py-1 lg:py-2 w-full mb-4"
+        className="appearance-none font-[var(--font-roboto)] text-base border border-black rounded-lg bg-white/80 pl-3 py-1 lg:py-2 w-full mb-4 text-black"
         value={value}
         onChange={(e) => onChange(e.target.value)}
       >
@@ -30,7 +30,7 @@ function Select({ label, options, value, onChange }: Props) {
 
       <div className="absolute top-2 lg:top-11 right-0 flex items-center pr-3">
         <svg
-          className="h-5 w-5 text-white"
+          className="h-5 w-5 text-black"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
