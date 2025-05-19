@@ -67,16 +67,16 @@ function App() {
   });
 
   return (
-    <div className="px-11 py-5 lg:py-11 w-screen h-dvh bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${earth})` }}>
-      <div className="backdrop-blur-md bg-white/5 rounded-3xl border border-white h-full w-full flex flex-col">
+    <div className="md:px-11 md:py-5 lg:py-11 w-screen h-dvh bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${earth})` }}>
+      <div className="backdrop-blur-md bg-white/5 md:rounded-3xl md:border md:border-white h-full w-full flex flex-col">
 
         <div>
           <Menu/>
         </div>
 
-        <div className="flex gap-11 lg:gap-7 px-11 py-7 lg:p-9 flex-grow h-60">
+        <div className="flex flex-col md:flex-row gap-5 md:gap-11 lg:gap-7 px-11 py-5 md:py-7 lg:p-9 flex-grow h-60">
 
-          <div  className="flex flex-col lg:flex-row w-2/5 lg:w-2/4 pr-11 lg:pr-7 gap-5 lg:gap-7 border-r border-white">
+          <div  className="flex flex-col lg:flex-row md:w-2/5 lg:w-2/4 md:pr-11 lg:pr-7 gap-5 border-b border-white md:border-b-0 pb-4 md:pb-0 lg:gap-7 md:border-r md:border-white">
             {error && <p className="text-red-600">Error: {error}</p>}
             <Filters
               rockets={rockets}
@@ -91,7 +91,7 @@ function App() {
             />
           </div>
 
-          <div className="w-3/5 lg:w-2/4">
+          <div className="md:w-3/5 lg:w-2/4 h-full">
             <Maps/>
           </div>
 

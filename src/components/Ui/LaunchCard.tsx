@@ -13,7 +13,7 @@ type Props = {
 
 function LaunchCard({ launch, rocketName, launchSite }: Props) {
   return (
-    <div className="w-full flex gap-3 bg-white/20 text-white pl-5 py-2 border border-white rounded-lg">
+    <div className="h-18 md:h-29 flex gap-3 bg-white/20 text-white pl-5 py-2 border border-white rounded-lg">
 
       <div className="flex flex-col justify-between">
         <div>
@@ -24,11 +24,11 @@ function LaunchCard({ launch, rocketName, launchSite }: Props) {
         </div>
       </div>
 
-      <div>
-        <p className="text-base font-[var(--font-roboto)] font-bold lg:mb-1 w-25 truncate">{launch.name}</p>
-        <p className="text-base font-[var(--font-roboto)] lg:mb-1 w-25 truncate">{launchSite}</p>
-        <p className="text-base font-[var(--font-roboto)] lg:mb-1">{rocketName}</p>
-        <p className="text-base font-[var(--font-roboto)] lg:mb-1">{new Date(launch.date_local).toLocaleDateString()}</p>
+      <div className="flex flex-col justify-between">
+        <p className="text-base font-[var(--font-roboto)] font-bold w-25 truncate">{launch.name}</p>
+        <p className="hidden md:block text-base font-[var(--font-roboto)] w-25 truncate">{launchSite}</p>
+        <p className="hidden md:block text-base font-[var(--font-roboto)]">{rocketName}</p>
+        <p className="text-base font-[var(--font-roboto)]">{new Date(launch.date_local).toLocaleDateString()}</p>
       </div>
 
     </div>
