@@ -77,7 +77,7 @@ function App() {
         <Launches
           rockets={rockets}
           launches={filteredLaunches}
-          launchespads={launchpads}
+          launchpads={launchpads}
         />
       </div>
     </>
