@@ -13,11 +13,11 @@ type Props = {
 function Select({ label, options, value, onChange }: Props) {
   return (
     <div className="relative w-full">
-      <label className="font-[var(--font-roboto)] font-normal text-xl text-white block mb-3">
+      <label className="font-[var(--font-roboto)] text-base text-white block mb-2">
         {label}
       </label>
       <select
-        className="appearance-none font-[var(--font-roboto)] font-normal text-xl text-white border rounded-lg bg-white/20 pl-3 py-2 w-full mb-6"
+        className="appearance-none font-[var(--font-roboto)] text-base text-white border rounded-lg bg-white/20 pl-3 py-2 w-full mb-6"
         value={value}
         onChange={(e) => onChange(e.target.value)}
       >
@@ -28,7 +28,7 @@ function Select({ label, options, value, onChange }: Props) {
         ))}
       </select>
 
-      <div className="absolute inset-y-16 right-0 flex items-center pr-3">
+      <div className="absolute inset-y-13 right-0 flex items-center pr-3">
         <svg
           className="h-5 w-5 text-white"
           xmlns="http://www.w3.org/2000/svg"
