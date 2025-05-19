@@ -7,6 +7,7 @@ import Filters from "./components/Modules/Filters";
 import Launches from "./components/Modules/Launches";
 import Menu from "./components/Modules/Menu";
 import Maps from "./components/Modules/Maps";
+import earth from './assets/earth.jpg';
 
 function App() {
   const [launches, setLaunches] = useState<launchesData[]>([]);
@@ -66,30 +67,36 @@ function App() {
   });
 
   return (
-    <div className="bg-black">
-      <Menu/>
+    <div className="px-11 py-11 w-screen h-dvh bg-cover bg-center bg-no-repeat" style={{ backgroundImage: `url(${earth})` }}>
+      <div className="backdrop-blur-md bg-white/5 rounded-3xl border border-white h-full w-full flex flex-col">
 
-      <div>
         <div>
-          {error && <p className="text-red-600">Error: {error}</p>}
-          <Filters
-            rockets={rockets}
-            launches={launches}
-            filters={filters}
-            setFilters={setFilters}
-          />
-          <Launches
-            rockets={rockets}
-            launches={filteredLaunches}
-            launchpads={launchpads}
-          />
+          <Menu/>
+        </div>
+
+        <div className="flex gap-7 p-9 flex-grow h-60">
+
+          <div  className="flex w-2/5 pr-7 gap-7 border-r border-white">
+            {error && <p className="text-red-600">Error: {error}</p>}
+            <Filters
+              rockets={rockets}
+              launches={launches}
+              filters={filters}
+              setFilters={setFilters}
+            />
+            <Launches
+              rockets={rockets}
+              launches={filteredLaunches}
+              launchpads={launchpads}
+            />
+          </div>
+
+          <div className="w-3/5">
+            <Maps/>
+          </div>
+
         </div>
       </div>
-
-      <div>
-        <Maps/>
-      </div>
-
     </div>
   );
 }
