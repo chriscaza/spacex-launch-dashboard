@@ -17,7 +17,7 @@ function Select({ label, options, value, onChange }: Props) {
         {label}
       </label>
       <select
-        className="appearance-none font-[var(--font-roboto)] text-base text-white border rounded-lg bg-white/20 pl-3 py-2 w-full mb-6"
+        className="appearance-none font-[var(--font-roboto)] text-base text-white border rounded-lg bg-white/20 pl-3 py-2 w-full mb-4"
         value={value}
         onChange={(e) => onChange(e.target.value)}
       >
