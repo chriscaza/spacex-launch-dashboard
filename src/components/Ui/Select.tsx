@@ -44,7 +44,6 @@ function Select({ label, options, value, onChange }: Props) {
           />
         </svg>
       </div>
-      
     </div>
   );
 }
