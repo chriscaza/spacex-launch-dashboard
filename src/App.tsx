@@ -6,6 +6,7 @@ import { type filters, type launchesData, type locationData } from "./types";
 import Filters from "./components/Modules/Filters";
 import Launches from "./components/Modules/Launches";
 import Menu from "./components/Modules/Menu";
+import Maps from "./components/Modules/Maps";
 
 function App() {
   const [launches, setLaunches] = useState<launchesData[]>([]);
@@ -67,6 +68,7 @@ function App() {
   return (
     <div className="bg-black">
       <Menu/>
+
       <div>
         <div>
           {error && <p className="text-red-600">Error: {error}</p>}
@@ -83,6 +85,11 @@ function App() {
           />
         </div>
       </div>
+
+      <div>
+        <Maps/>
+      </div>
+
     </div>
   );
 }
