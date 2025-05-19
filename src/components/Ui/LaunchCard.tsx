@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { type launchesData } from "../../types";
 import {
   MdFavoriteBorder,
@@ -12,6 +13,36 @@ type Props = {
 };
 
 function LaunchCard({ launch, rocketName, launchSite }: Props) {
+  
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  useEffect(() => {
+    const storedFavorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+    const found = storedFavorites.some((fav: any) => fav.id === launch.id);
+    setIsFavorite(found);
+  }, [launch.id]);
+
+  const toggleFavorite = () => {
+    const storedFavorites = JSON.parse(localStorage.getItem("favorites") || "[]");
+
+    if (isFavorite) {
+      const updatedFavorites = storedFavorites.filter((fav: any) => fav.id !== launch.id);
+      localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
+      setIsFavorite(false);
+    } else {
+      const newFavorite = {
+        id: launch.id,
+        name: launch.name,
+        rocketName,
+        launchSite,
+        date_local: launch.date_local,
+        success: launch.success,
+      };
+      localStorage.setItem("favorites", JSON.stringify([...storedFavorites, newFavorite]));
+      setIsFavorite(true);
+    }
+  };
+
   return (
     <div className="h-18 md:h-29 flex gap-3 bg-white/20 text-white pl-5 py-2 border border-white rounded-lg">
 
@@ -19,9 +50,13 @@ function LaunchCard({ launch, rocketName, launchSite }: Props) {
         <div>
           {launch.success ? (<MdOutlineCheckCircleOutline className="text-green-500 text-3xl" />) : (<MdOutlineCancel className="text-red-500 text-3xl" />)}
         </div>
-        <div>
-          <MdFavoriteBorder className="text-white text-3xl" />
-        </div>
+        <button onClick={toggleFavorite} className="cursor-pointer">
+          {isFavorite ? (
+            <MdFavoriteBorder className="text-red-500 text-3xl" />
+          ) : (
+            <MdFavoriteBorder className="text-white text-3xl" />
+          )}
+        </button>
       </div>
 
       <div className="flex flex-col justify-between">
