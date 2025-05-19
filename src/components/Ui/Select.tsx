@@ -28,7 +28,7 @@ function Select({ label, options, value, onChange }: Props) {
         ))}
       </select>
 
-      <div className="pointer-events-none absolute inset-y-16 right-0 flex items-center pr-3">
+      <div className="absolute inset-y-16 right-0 flex items-center pr-3">
         <svg
           className="h-5 w-5 text-white"
           xmlns="http://www.w3.org/2000/svg"
