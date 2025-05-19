@@ -1,4 +1,5 @@
 import Select from "../Ui/Select";
+import Input from "../Ui/Input";
 import { type launchesData, type filters } from "../../types";
 
 type Props = {
@@ -32,7 +33,7 @@ function Filters({ rockets, launches, filters, setFilters}: Props) {
     ).sort((a, b) => b - a);
 
     const yearOptions = [
-        { label: "Año", value: "" },
+        { label: "Años", value: "" },
         ...uniqueYears.map((year) => ({
         label: year.toString(),
         value: year.toString(),
@@ -62,15 +63,11 @@ function Filters({ rockets, launches, filters, setFilters}: Props) {
                 onChange={(v) => handleChange("year", v)}
             />
 
-            <div>
-                <label>Buscar misión</label>
-                <input
-                type="text"
+            <Input
                 value={filters.mission}
-                onChange={(e) => handleChange("mission", e.target.value)}
-                placeholder="Nombre de la misión"
-                />
-            </div>
+                onChange={(e) => handleChange("mission", e)}
+            />
+
         </div>
     )
 }
