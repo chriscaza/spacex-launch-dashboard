@@ -9,7 +9,9 @@ import Maps from "../components/Modules/Maps";
 
 function Dashboard() {
   const [launches, setLaunches] = useState<launchesData[]>([]);
-  const [launchpads, setLaunchpads] = useState<Record<string, locationData>>({});
+  const [launchpads, setLaunchpads] = useState<Record<string, locationData>>(
+    {}
+  );
   const [rockets, setRockets] = useState<Record<string, string>>({});
   const [error, setError] = useState<string | null>(null);
   const [filters, setFilters] = useState<filters>({

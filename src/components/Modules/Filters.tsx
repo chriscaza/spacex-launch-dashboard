@@ -106,7 +106,7 @@ function Filters({ rockets, launches, filters, setFilters }: Props) {
           </div>
         )}
       </div>
-      
+
       {/* Filtros para escritorio*/}
       <div className="hidden md:flex flex-col">
         <Select

@@ -4,13 +4,12 @@ import LaunchCard from "../Ui/LaunchCard";
 
 //Props que recibe el componente
 type Props = {
-    rockets: Record<string, string>;
-    launches: launchesData[];
-    launchpads: Record<string, locationData>;
-}
+  rockets: Record<string, string>;
+  launches: launchesData[];
+  launchpads: Record<string, locationData>;
+};
 
 function Launches({ launches, rockets, launchpads }: Props) {
-
   // Estado para controlar cuántos lanzamientos se muestran (lazy loading)
   const [visibleCount, setVisibleCount] = useState(5);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -28,9 +27,7 @@ function Launches({ launches, rockets, launchpads }: Props) {
     const handleScroll = () => {
       const { scrollTop, scrollHeight, clientHeight } = container;
       if (scrollTop + clientHeight >= scrollHeight - 100) {
-        setVisibleCount((prev) =>
-          Math.min(prev + 5, launches.length)
-        );
+        setVisibleCount((prev) => Math.min(prev + 5, launches.length));
       }
     };
 
@@ -41,7 +38,10 @@ function Launches({ launches, rockets, launchpads }: Props) {
   }, [launches.length]);
 
   return (
-    <div ref={containerRef} className="lg:w-1/2 h-36 md:h-1/2 lg:h-auto overflow-y-auto scrollbar-hide grid gap-4">
+    <div
+      ref={containerRef}
+      className="lg:w-1/2 h-36 md:h-1/2 lg:h-auto overflow-y-auto scrollbar-hide grid gap-4"
+    >
       {launches.slice(0, visibleCount).map((launch) => {
         const rocketName = rockets[launch.rocket] || "Desconocido";
         const launchpad = launchpads[launch.launchpad];
