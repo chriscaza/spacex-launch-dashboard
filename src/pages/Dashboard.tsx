@@ -79,7 +79,7 @@ function Dashboard() {
       </div>
 
       <div className="md:w-3/5 lg:w-2/4 h-full">
-        <Maps />
+        <Maps launchpads={Object.values(launchpads)} />
       </div>
     </div>
   );
