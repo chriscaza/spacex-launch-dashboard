@@ -2,6 +2,7 @@ import { type launchesData, type locationData } from "../../types";
 import { useState, useEffect, useRef } from "react";
 import LaunchCard from "../Ui/LaunchCard";
 
+//Props que recibe el componente
 type Props = {
     rockets: Record<string, string>;
     launches: launchesData[];
@@ -10,13 +11,16 @@ type Props = {
 
 function Launches({ launches, rockets, launchpads }: Props) {
 
+  // Estado para controlar cuántos lanzamientos se muestran (lazy loading)
   const [visibleCount, setVisibleCount] = useState(5);
   const containerRef = useRef<HTMLDivElement>(null);
 
+  // Reinicia la cantidad visible cuando cambian los lanzamientos
   useEffect(() => {
     setVisibleCount(5);
   }, [launches]);
 
+  // Detecta cuando el usuario hace scroll para cargar más elemento
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
